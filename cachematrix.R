@@ -1,14 +1,14 @@
-## The two functions defined below, makeCacheMatrix() and cacheSolve(), calculate cache the inverse of 
+## The two functions defined below, makeCacheMatrix() and cacheSolve(), calculate and cache the inverse of 
 ## inversable matrix x
 
 ## makeCacheMatrix creates a matrix object x that can cache itself and its inverse; x$get() returns matrix x;
-## x$set(y) sets a new value y for matrix x and caches it (note that y also needs to be a reversible matrix);
+## x$set(y) sets a new value y for matrix x and caches it (note that y needs to be a reversible matrix);
 ## x$getinv() returns inv, the inverse of matrix x;
 ## x$setinv(inver) sets a new value inver for inv, the inverse of matrix x; 
 ## if inv has not been calculated and cached (value is NULL), cacheSolve(x) calculates the inverse of x 
 ## and uses x$setinv() to replace and cache the solution;
-## Note that x$set() resets the value of inv to NULL: if x's value is changed, its inverse will need to be 
-## recalculated anew with solveCache rather than accessed from the cache.
+## Note that x$set() resets the value of inv to NULL: whenever x's value is changed, its inverse needs to be 
+## recalculated again by solveCache because it cannot be accessed from the cache.
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
